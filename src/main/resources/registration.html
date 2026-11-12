@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm" novalidate>
+
+        Student Name:
+        <input type="text" id="studentName">
+        <br><br>
+
+        Email ID:
+        <input type="email" id="email">
+        <br><br>
+
+        USN:
+        <input type="text" id="usn">
+        <br><br>
+
+        Department:
+
+        <select id="department">
+            <option value="">Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="AIML">AIML</option>
+            <option value="ISE">ISE</option>
+            <option value="ECE">ECE</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit" id="submit">
+            Submit
+        </button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+
+        document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let name =
+            document.getElementById("studentName").value;
+
+            let email =
+            document.getElementById("email").value;
+
+            let usn =
+            document.getElementById("usn").value;
+
+            let dept =
+            document.getElementById("department").value;
+
+            if(name === "" || email === "" ||
+               usn === "" || dept === "") {
+
+                document.getElementById("message").innerText =
+                "Please fill in all fields.";
+
+            }
+
+            else {
+
+                document.getElementById("message").innerText =
+                "Registration successful!";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
